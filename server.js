@@ -3,15 +3,15 @@ var express = require("express");
 var app = express();
 
 // Port initialization
-var PORT = process.env.PORT || 2141;
+var PORT = process.env.PORT || 1226;
 
 // Express app handling
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // Routing paths
-require("/app/routing/htmlRoutes")(app);
-require("/app/routing/htmlRoutes")(app);
+require("./app/routing/apiRoutes")(app);
+require("./app/routing/htmlRoutes")(app);
 
 // Listener
 app.listen(PORT, function () {
